@@ -9,7 +9,6 @@
 
 //a naive recursive approach
 //runtime: exponential
-
 function fibonacci(num) {
   if (num < 2) return num;
   return fibonacci(num - 1) + fibonacci(num - 2);
@@ -17,7 +16,6 @@ function fibonacci(num) {
 
 //a recursive approach with memoization
 //runtime: linear
-
 function fibonacci2(n,memo={}) {
   if (memo[n]) return memo[n];
   if (n<2) return n;
@@ -26,7 +24,6 @@ function fibonacci2(n,memo={}) {
 
 //a bottom-up iterative approach
 //runtime: linear
-
 function fibonacci3(n){
   const arr = [0,1];
   if (n<2) {
