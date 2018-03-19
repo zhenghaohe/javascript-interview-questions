@@ -11,8 +11,8 @@ function chunk(arr,size) {
   const chunked  = [];
   for (let element of arr) {
     const last = chunked[chunked.length-1];
-    if (!last || last.length === size) {
-      chunked.push([element]);
+    if (!last || last.length === size) {  // "short-circuit" evaluation
+      chunked.push([element]); // form a new chunk with the first value in it
     }else{
       last.push(element);
     }
@@ -20,11 +20,12 @@ function chunk(arr,size) {
   return chunked;
 }
 
+
 function chunk2(arr,size) {
   const chunked = [];
   let index = 0;
   while(index<arr.length) {
-    chunked.push(arr.slice(index,index+size+1)); // directly stick it into chunked
+    chunked.push(arr.slice(index,index+size)); // directly stick it into chunked
     index += size;
   }
   return chunked;
