@@ -128,6 +128,18 @@ class LinkedList {
     }
     prevNode.next = new Node(data,node);
   }
+  reverse() {
+    let node = this.head;
+    let prevNode = null;
+    let temp;
+    while(node) {
+      temp = node.next;
+      node.next = prevNode;
+      prevNode = node;
+      node = temp;
+    }
+    this.head = prevNode;
+  }
 
 }
 
@@ -138,5 +150,5 @@ list.insertFirst(2);
 list.insertFirst(1);
 list.insertLast(4);
 console.log(list.size());
-list.forEach((node,index) => node.data += 10);
+list.reverse();
 console.log(list.size());
