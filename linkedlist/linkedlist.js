@@ -113,7 +113,6 @@ class LinkedList {
     }
     return; //edge case 2&3: empty list or val is not in the list
   }
-
   insertAt(data,index) {
     let node = this.head;
     let counter = 0;
@@ -138,4 +137,6 @@ list.insertFirst(3);
 list.insertFirst(2);
 list.insertFirst(1);
 list.insertLast(4);
+console.log(list.size());
+list.forEach((node,index) => node.data += 10);
 console.log(list.size());
