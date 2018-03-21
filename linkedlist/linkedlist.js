@@ -99,7 +99,7 @@ class LinkedList {
   removeVal(val) {
     let node = this.head;
     let prevNode;
-    if (node && node.data === val) { // edge case 1: index = 0
+    if (node && node.data === val) { //edge case 1: index = 0
       this.head = node.next;
       return;
     }
@@ -111,7 +111,23 @@ class LinkedList {
       prevNode.next = node.next;
       return;
     }
-    return; // edge case 2&3: empty list or val is not in the list
+    return; //edge case 2&3: empty list or val is not in the list
+  }
+
+  insertAt(data,index) {
+    let node = this.head;
+    let counter = 0;
+    let prevNode;
+    if (index === 0 || !node) { //edge case 1&2: empty list or insert at index 0
+      this.head = new Node(data,node);
+      return;
+    }
+    while(node && counter !== index) {
+      prevNode = node;
+      node = node.next;
+      counter++;
+    }
+    prevNode.next = new Node(data,node);
   }
 
 }
@@ -122,7 +138,4 @@ list.insertFirst(3);
 list.insertFirst(2);
 list.insertFirst(1);
 list.insertLast(4);
-console.log(list.size());
-// console.log(list.getAt(0));
-console.log(list.removeVal(100));
 console.log(list.size());
