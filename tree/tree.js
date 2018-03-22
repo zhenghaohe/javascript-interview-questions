@@ -28,18 +28,18 @@ class Tree {
     this.root = null;
   }
   traverseBF(fn) {
-    const arr = [this.root];
-    while(arr.length) {
-      const node = arr.shift();
-      arr.push(...node.children);
+    const queue = [this.root];
+    while(queue.length) {
+      const node = queue.shift();
+      queue.push(...node.children);
       fn(node);
     }
   }
   traverseDF(fn) {
-    const arr = [this.root];
-    while(arr.length) {
-      const node = arr.shift();
-      arr.unshift(...node.children);
+    const stack = [this.root];
+    while(stack.length) {
+      const node = stack.shift();
+      stack.unshift(...node.children);
       fn(node);
     }
   }
