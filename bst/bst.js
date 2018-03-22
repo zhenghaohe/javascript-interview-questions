@@ -18,17 +18,18 @@ class Node {
     this.left = null;
     this.right = null;
   }
-  add(data) {
-    if (data<this.data && this.left) {
-      this.left.add(data);
-    }else if(data<this.data) {
-      this.left = new Node(data);
-    }else if(data>this.data && this.right){
-      this.right.add(data);
-    }else {
-      this.right = new Node(data);
+  insert(data) {
+      if (data < this.data && this.left) {
+        this.left.insert(data);
+      } else if (data < this.data) {
+        this.left = new Node(data);
+      } else if (data > this.data && this.right) {
+        this.right.insert(data);
+      } else if (data > this.data) {
+        this.right = new Node(data);
+      }
     }
-  }
+
   contain(data){
     if (this.data === data) {
       return this;
@@ -36,8 +37,17 @@ class Node {
     if (this.data>data && this.left) {
       return this.left.contain(data);
     }else if(this.data<data && this.right){
-      rerturn this.right.contain(data);
+      return this.right.contain(data);
     }
     return null;
   }
-}
+  }
+
+
+const root = new Node(10);
+root.insert(0);
+root.insert(12);
+root.insert(20);
+root.insert(99);
+
+console.log(root.findMaxHeight());
