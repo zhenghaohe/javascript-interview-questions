@@ -1,11 +1,9 @@
 const quickSort = (arr,left = 0,right = arr.length-1) => {
-  if (left >= right) {
-    return;
-  }
+  if (left >= right) return; //base case
   const pivot = left; //pick the leftmost element as the pivot
   const index = partition(arr, left, right);
   quickSort(arr, left, index-1);
-  quickSort(arr, index, right);
+  quickSort(arr, index+1, right);
 };
 
 const partition = (arr,left,right) => {
@@ -18,9 +16,9 @@ const partition = (arr,left,right) => {
       arr[i++] = temp;
     }
   }
-  let temp = arr[i-1];
+  let temp = arr[--i];
   arr[left] = temp;
-  arr[i-1] = pivot;
+  arr[i] = pivot;
   return i;
 }
 
