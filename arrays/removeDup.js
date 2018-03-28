@@ -3,12 +3,21 @@
 // For example, Given input array nums = [1,1,2],
 // Your function should return length = 2, with the first two elements of nums being 1 and 2 respectively. It doesn't matter what you leave beyond the new length.
 
-const removeDuplicates = function(nums) {
+const removeDuplicates = function(arr) {
   let i = 0;
   for (let j = 1; j < arr.length; j++) {
     if (arr[i]!==arr[j]) {
       arr[++i] = arr[j];
     }
   }
-  return i++;
+  return ++i;
 }
+
+const removeDuplicates2 = function(arr) {
+  return arr.filter((val,index,self)=>self.indexOf(val)===index).length
+}
+
+console.log(removeDuplicates2([]));
+console.log(removeDuplicates2([1]));
+console.log(removeDuplicates2([1,1]));
+console.log(removeDuplicates2([1,1,1,1,2,2,3,3,3,4,5,7,7]));
