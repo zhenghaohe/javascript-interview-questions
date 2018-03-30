@@ -30,11 +30,11 @@ function balancedParens2(string) {
 function balancedParens3(string) {
   let stack = [];
   return [...string].every(char => char === '(' ?
-                        stack.push('(') :
+                        stack.push('(') : //push() return the new length of the array.
                         stack.pop()) //pop() on an empty array, it returns undefined.
   && !stack.length;
 }
 
 
-console.log(balancedParens2('(((()))'));
+console.log(balancedParens2(')()'));
 console.log(balancedParens3('()()'));
