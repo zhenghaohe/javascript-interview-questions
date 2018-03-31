@@ -24,7 +24,7 @@ function fizzBuzz(n) {
     } else if (i % 5 === 0) {
       console.log('buzz');
     } else {
-      console.log(i);
+      console.log(i.toString());
     }
   }
 }
@@ -33,11 +33,11 @@ function fizzBuzz(n) {
 function fizzBuzz2(n) {
   let Fizz = 3;
   let Buzz = 5;
-  for (var i = 1; i <= n; i++) {
+  for (let i = 1; i <= n; i++) {
     Fizz--;
     Buzz--;
     if (Fizz === 0) {
-      if (Buzz ===0) {
+      if (Buzz === 0) {
         console.log("FizzBuzz");
         Buzz=5;
         Fizz=3;
@@ -46,11 +46,11 @@ function fizzBuzz2(n) {
         Fizz=3;
       }
     }
-    else if(Buzz===0){
+    else if(Buzz === 0){
       console.log('Buzz');
       Buzz = 5;
     }else{
-      console.log(i);
+      console.log(i.toString());
     }
   }
 }
