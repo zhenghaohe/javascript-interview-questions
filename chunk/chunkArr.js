@@ -11,7 +11,7 @@ function chunk(arr,size) {
   const chunked  = [];
   for (let element of arr) {
     const last = chunked[chunked.length-1];
-    if (!last || last.length === size) {  // "short-circuit" evaluation
+    if (!last || last.length === size) {  
       chunked.push([element]); // form a new chunk with the first value in it
     }else{
       last.push(element);
