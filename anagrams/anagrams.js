@@ -17,13 +17,13 @@ function anagrams(stringA,stringB) {
   for (let char in aCharMap) {
     if (aCharMap[char] !== bCharMap[char]) return false;
     }
-  }
   return true;
-}
+  }
+
 
 function buildCharMap(str) {
   const charMap = {};
-  for (let char of str.replace(/[^\w]/g,"").toLowerCase()) {
+  for (let char of str.replace(/[^\w]/g,"").toLowerCase()) { // or str.replace(/\W/g,'').toLowerCase()
     charMap[char]?charMap[char]++:charMap[char]=1;
   }
   return charMap;

@@ -3,6 +3,7 @@
 // For example, Given input array nums = [1,1,2],
 // Your function should return length = 2, with the first two elements of nums being 1 and 2 respectively. It doesn't matter what you leave beyond the new length.
 
+//in place interative approach
 const removeDuplicates = function(arr) {
   let i = 0;
   for (let j = 1; j < arr.length; j++) {
@@ -13,6 +14,7 @@ const removeDuplicates = function(arr) {
   return ++i;
 }
 
+//using filter helper but not in place
 const removeDuplicates2 = function(arr) {
   return arr.filter((val,index,self)=>self.indexOf(val)===index).length
 }

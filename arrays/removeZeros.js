@@ -4,14 +4,17 @@
 // You must do this in-place without making a copy of the array.
 // Minimize the total number of operations.
 
-const moveZeroes = function(nums) {
-  let i = 0;
+//iterative approach
+const moveZeroes = function(arr) {
+  let i = -1;
   for (let j = 0; j < arr.length; j++) {
     if (arr[j] !== 0) {
-        arr[i] = arr[j];
+        arr[++i] = arr[j];
         arr[j] = 0;
-        i++;
     }
   }
   return arr;
 }
+
+
+console.log(moveZeroes([0, 1, 0, 3, 12]));
