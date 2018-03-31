@@ -49,5 +49,3 @@ root.insert(0);
 root.insert(12);
 root.insert(20);
 root.insert(99);
-
-console.log(root.findMaxHeight());
