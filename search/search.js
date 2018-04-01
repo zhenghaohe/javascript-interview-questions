@@ -16,10 +16,10 @@ function binarySearch2(arr,k,l = 0,r = arr.length)
   if(l > r) return -1;
   let m = l + parseInt((r-l)/2);
   if (k === arr[m]) return m;
-  if (k<arr[m]) return binarySearch2(arr,k,l,r-1);
+  if (k<arr[m]) return binarySearch2(arr,k,l,m-1);
   else return binarySearch(arr,k,m+1,r);
 }
 
-console.log(binarySearch2([5,7,12,16,36],7));
+console.log(binarySearch2([5,7,12,16,36,99,111],111));
 console.log(binarySearch2([5],7));
 console.log(binarySearch2([],7));
