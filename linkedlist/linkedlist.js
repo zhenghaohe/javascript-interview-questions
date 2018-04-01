@@ -53,7 +53,6 @@ class LinkedList {
       prevNode ? prevNode.next = null : this.head = null;
     }
   }
-
   insertLast(data) {
     let node = this.head;
     if (node) {
@@ -65,17 +64,15 @@ class LinkedList {
       this.head = new Node(data);
     }
   }
-
   getAt(index) {
     let counter = 0;
     let node = this.head;
-    while(node && counter!==index){
+    while(node && counter !== index){
       counter++;
       node = node.next;
     }
-    return (node ? node: null);
+    return (node ? node : null);
   }
-
   removeIndex(index) {
     let node = this.head;
     let counter = 0;
@@ -95,7 +92,6 @@ class LinkedList {
     }
     return; // edge case 2&3: empty list or index>size
   }
-
   removeVal(val) {
     let node = this.head;
     let prevNode;
@@ -113,6 +109,7 @@ class LinkedList {
     }
     return; //edge case 2&3: empty list or val is not in the list
   }
+
   insertAt(data,index) {
     let node = this.head;
     let counter = 0;
@@ -141,6 +138,16 @@ class LinkedList {
     this.head = prevNode;
   }
 
+  sum() {
+    let sum = 0;
+    let node = this.head;
+    while(node) {
+      sum += node.data;
+      node = node.next;
+    }
+    return sum;
+  }
+
 }
 
 
@@ -148,7 +155,8 @@ const list = new LinkedList();
 list.insertFirst(3);
 list.insertFirst(2);
 list.insertFirst(1);
-list.insertLast(4);
+list.insertLast(5);
+console.log(list.sum());
 console.log(list.size());
 list.reverse();
 console.log(list.size());
