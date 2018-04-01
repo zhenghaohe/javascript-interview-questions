@@ -161,8 +161,8 @@ class BST {
       const queue = [this.root];
       while(queue.length) {
         const node = queue.shift();
-        if(node.left) queue.push(node.left);
-        if(node.right) queue.push(node.right);
+        node.left && queue.push(node.left);
+        node.right && queue.push(node.right);
         result.push(node.data);
       }
       return result;
@@ -176,8 +176,8 @@ class BST {
       const stack = [this.root];
       while(stack.length) {
         const node = stack.shift();
-        if(node.right) stack.unshift(node.right);
-        if(node.left) stack.unshift(node.left);
+        node.right && stack.unshift(node.right);
+        node.left && stack.unshift(node.left);
         result.push(node.data);
       }
       return result;
