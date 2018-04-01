@@ -30,3 +30,7 @@ function reverse4(str) {
   if (str === '') return '';
   return reverse4(str.substr(1))+str[0] // or str.slice(1)
 }
+
+
+
+console.log(reverse2('str'));

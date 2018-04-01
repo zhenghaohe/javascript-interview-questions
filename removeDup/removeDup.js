@@ -14,5 +14,14 @@ function removeDup2(string) {
   },[]).join(' ');
 }
 
+function removeDup3(string) {
+  return string.toLowerCase().split(' ').reduce((previous,word)=>{
+    if (previous.indexOf(word)===-1) previous.push(word);
+    return previous;
+  },'');
+}
 
-console.log(removeDup2('Today is a good day today'));
+
+// console.log(removeDup2('Today is a good day today'));
+
+console.log('zhenghao he'.indexOf('hao'));
