@@ -191,6 +191,8 @@ bst.add(5);
 bst.add(9);
 bst.add(27);
 bst.add(99);
+bst.add(100);
+
 
 // bst.remove(5);
 bst.remove(7);
@@ -206,12 +208,12 @@ console.log(bst.isPresent(5));
 console.log(bst.isPresent(1));
 
 
-// // bst.add(10);
-// console.log(bst.findMinHeight());
-// console.log(bst.findMaxHeight());
-// console.log(bst.isBalanced());
-// console.log('inOrder: ' + bst.inOrder());
-// console.log('preOrder: ' + bst.preOrder());
-// console.log('postOrder: ' + bst.postOrder());
-// console.log('traverseBF: ' + bst.traverseBF());
-// console.log('traverseDF: ' + bst.traverseDF());
+// bst.add(10);
+console.log(bst.findMinHeight());
+console.log(bst.findMaxHeight());
+console.log(bst.isBalanced());
+console.log('inOrder: ' + bst.inOrder());
+console.log('preOrder: ' + bst.preOrder());
+console.log('postOrder: ' + bst.postOrder());
+console.log('traverseBF: ' + bst.traverseBF());
+console.log('traverseDF: ' + bst.traverseDF());
