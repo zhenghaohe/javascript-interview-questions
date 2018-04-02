@@ -21,7 +21,18 @@ function removeDup3(string) {
   },'');
 }
 
+//use a map object
+function removeDup4(string) {
+  const chars = {};
+  return string.toLowerCase().split(' ').reduce( (newStr,char) => {
+    if (!chars[char]) {
+      chars[char] = true;
+      newStr.push(char);
+    }
+    return newStr;
+  },[]).join(' ');
+}
 
-// console.log(removeDup2('Today is a good day today'));
+console.log(removeDup4('Today is a good day today'));
 
-console.log('zhenghao he'.indexOf('hao'));
+// console.log('zhenghao he'.indexOf('hao'));
