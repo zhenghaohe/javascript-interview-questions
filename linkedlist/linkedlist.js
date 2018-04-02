@@ -109,7 +109,6 @@ class LinkedList {
     }
     return; //edge case 2&3: empty list or val is not in the list
   }
-
   insertAt(data,index) {
     let node = this.head;
     let counter = 0;
@@ -137,7 +136,6 @@ class LinkedList {
     }
     this.head = prevNode;
   }
-
   sum() {
     let sum = 0;
     let node = this.head;
@@ -147,7 +145,13 @@ class LinkedList {
     }
     return sum;
   }
-
+  *[Symbol.iterator]() {
+    let node = this.head;
+    while(node) {
+      yield node;
+      node = node.next;
+    }
+  }
 }
 
 
@@ -160,3 +164,6 @@ console.log(list.sum());
 console.log(list.size());
 list.reverse();
 console.log(list.size());
+for (let node of list) {
+  console.log(node.data);
+}
