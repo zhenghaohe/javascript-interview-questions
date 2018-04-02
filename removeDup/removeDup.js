@@ -2,7 +2,7 @@
 
 //use filter helper
 function removeDup(str) {
-  return str.split(' ').filter((val,index,self) => self.indexOf(val) === index).join(' ');
+  return str.split(' ').filter((val,index,self) => self.indexOf(val) === index).join(' '); //A new array with the elements that pass the test.
 }
 
 //use reduce and indexOf helper
