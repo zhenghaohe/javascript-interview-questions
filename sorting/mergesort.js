@@ -1,4 +1,4 @@
-// Implement bubbleSort, selectionSort, and mergeSort
+// Implement mergeSort
 
 // recursively subdivide this input array
 function mergeSort(arr) {

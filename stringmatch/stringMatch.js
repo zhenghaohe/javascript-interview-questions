@@ -10,3 +10,10 @@ var strStr = function(haystack, needle) {
     }
     return -1;
 };
+
+
+
+strStr("emily", "");   // 0
+strStr("emily", "e");   // 0
+strStr("emily", "i");   // 2
+strStr("emily", "ily"); // 2

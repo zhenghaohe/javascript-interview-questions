@@ -33,4 +33,4 @@ function reverse4(str) {
 
 
 
-console.log(reverse2('str'));
+console.log(reverse3('123'));

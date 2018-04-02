@@ -16,5 +16,6 @@ function reverseWords2(string) {
   },[]).join(' ');
 }
 
+
 console.log(reverseWords('Coding JavaScript'));
 console.log(reverseWords2('Coding JavaScript'));

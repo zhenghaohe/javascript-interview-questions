@@ -24,5 +24,3 @@ function reverseInt2(n) {
 
 
 console.log( reverseInt(-90));
-
-console.log(parseInt(9/10));

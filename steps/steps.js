@@ -19,19 +19,16 @@
 
 //iterative solution
 function steps(n) {
-  for (let row = 0; row < n; row++) {
-    let stair = '';
-    for (let col = 0; col < n; col++) {
-      if (col<=row) {
-        stair += '#'
-      }else{
-        stair += ' '
-      }
+  for (let row = 1; row <= n; row++) {
+    let stair = '#'.repeat(row);
+    for (let col = row+1; col <= n; col++) {
+      stair += ' ';
     }
     console.log(stair);
   }
 }
 
+steps(4);
 //recursive solution
 function helper(n,row) {
   return '*'.repeat(row)+' '.repeat(n-row);
