@@ -1,8 +1,7 @@
 function firstNonRepeatedCharacter(string) {
     for (let i = 0; i < string.length; i++) {
-        let c = string[i];
-        if (string.indexOf(c) === i && string.indexOf(c, i + 1) === -1) {
-            return c;
+        if (string.indexOf(string[i]) === i && string.indexOf(string[i], i + 1) === -1) {
+            return string[i];
         }
     }
     return null;
