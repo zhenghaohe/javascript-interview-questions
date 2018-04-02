@@ -16,7 +16,6 @@ class LinkedList {
     let counter = 0;
     let node = this.head;
     while(node) {
-      console.log(node.data);
       counter++;
       node = node.next;
     }
@@ -160,6 +159,8 @@ list.insertFirst(3);
 list.insertFirst(2);
 list.insertFirst(1);
 list.insertLast(5);
+list.removeIndex(9);
+
 console.log(list.sum());
 console.log(list.size());
 list.reverse();

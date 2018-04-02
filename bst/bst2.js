@@ -191,7 +191,7 @@ bst.add(5);
 bst.add(9);
 bst.add(27);
 bst.add(99);
-bst.add(100);
+bst.add(1);
 
 
 // bst.remove(5);
