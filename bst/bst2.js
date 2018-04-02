@@ -14,62 +14,52 @@ class BST {
 
   add(data) {
     const node = this.root;
-    if (node === null) {
+    if (!node) {
       this.root = new Node(data);
       return;
     } else {
       (function searchTree(node) {
-        if (data<node.data&&node.left) {
-          searchTree(node.left);
-        }else if (data<node.data) {
-          node.left = new Node(data);
-        }else if (data>node.data&&node.right) {
-          searchTree(node.right);
-        }else if (data>node.data) {
-          node.right = new Node(data);
-        }})(node);
+        if (data<node.data&&node.left) searchTree(node.left);
+        else if (data<node.data) node.left = new Node(data);
+        else if (data>node.data&&node.right) searchTree(node.right);
+        else if (data>node.data) node.right = new Node(data);
+        })(node);
     }}
 
   findMin() {
-    let current = this.root;
-    while (current.left) {
-      current = current.left;
+    let node = this.root;
+    while(node) {
+      if (!node.left) return node.data;
+      node = node.left;
     }
-    return current.data;
+    return null;
   }
 
   findMax() {
-    let current = this.root;
-    while (current.right) {
-      current = current.right;
+    let node = this.root;
+    while (node) {
+      if (!node.right) return node.data;
+      node = node.right;
     }
-    return current.data;
+    return null;
   }
 
   find(data) {
-    let current = this.root;
-    while (current.data !== data) {
-      if (data < current.data) {
-        current = current.left;
-      } else {
-        current = current.right;
-      }
-      if (!current) return null;
+    let node = this.root;
+    while (node) {
+      if (node.data === data) return node;
+      if (node.data<data) node = node.right;
+      else node = node.left;
     }
-    return current;
+    return null;
   }
 
   isPresent(data) {
-    let current = this.root;
-    while (current) {
-      if (data === current.data) {
-        return true;
-      }
-      if (data < current.data) {
-        current = current.left;
-      } else {
-        current = current.right;
-      }
+    let node = this.root;
+    while (node) {
+      if (data === node.data) return true;
+      if (data < node.data) node = node.left;
+      else node = node.right;
     }
     return false;
   }
@@ -200,22 +190,28 @@ bst.add(13);
 bst.add(5);
 bst.add(9);
 bst.add(27);
+bst.add(99);
 
 // bst.remove(5);
 bst.remove(7);
 bst.remove(15);
 console.log(bst.findMax());
 console.log(bst.findMin());
-console.log(bst.findMinHeight());
-console.log(bst.findMaxHeight());
-console.log(bst.isBalanced());
+// console.log(bst.findMinHeight());
+// console.log(bst.findMaxHeight());
+// console.log(bst.isBalanced());
 console.log(bst.find(5));
-// bst.add(10);
-console.log(bst.findMinHeight());
-console.log(bst.findMaxHeight());
-console.log(bst.isBalanced());
-console.log('inOrder: ' + bst.inOrder());
-console.log('preOrder: ' + bst.preOrder());
-console.log('postOrder: ' + bst.postOrder());
-console.log('traverseBF: ' + bst.traverseBF());
-console.log('traverseDF: ' + bst.traverseDF());
+console.log(bst.find(1));
+console.log(bst.isPresent(5));
+console.log(bst.isPresent(1));
+
+
+// // bst.add(10);
+// console.log(bst.findMinHeight());
+// console.log(bst.findMaxHeight());
+// console.log(bst.isBalanced());
+// console.log('inOrder: ' + bst.inOrder());
+// console.log('preOrder: ' + bst.preOrder());
+// console.log('postOrder: ' + bst.postOrder());
+// console.log('traverseBF: ' + bst.traverseBF());
+// console.log('traverseDF: ' + bst.traverseDF());
