@@ -159,12 +159,13 @@ list.insertFirst(3);
 list.insertFirst(2);
 list.insertFirst(1);
 list.insertLast(5);
-list.removeIndex(9);
 
 console.log(list.sum());
 console.log(list.size());
 list.reverse();
 console.log(list.size());
+let sum = 0;
 for (let node of list) {
-  console.log(node.data);
+  sum += node.data;
 }
+console.log(sum);
