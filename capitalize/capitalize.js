@@ -26,3 +26,19 @@ function capitalize2(str) {
   }
   return words;
 }
+
+
+function capitalize3(str) {
+  return str.split(' ').map(word => word[0].toUpperCase()+ word.slice(1)).join(' ');
+}
+
+function capitalize4(str) {
+  return str.split(' ').reduce( (newStr,word) => {
+    newStr.push(word[0].toUpperCase()+ word.slice(1));
+    return newStr;
+  },[]).join(' ');
+}
+
+
+
+console.log(capitalize4('a short sentence'));

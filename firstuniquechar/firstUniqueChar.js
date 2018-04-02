@@ -6,5 +6,13 @@ function firstNonRepeatedCharacter(string) {
     }
     return null;
 }
+
+
+function firstNonRepeatedCharacter2(string) {
+  return  string.split('').
+          filter((char,index,self)=>self.indexOf(char)===index && self.indexOf(char,index+1)===-1)[0];
+}
+
 let someString = 'aabcbd';
-console.log(firstNonRepeatedCharacter(someString));
+let someString2 = 'zhennzhaohe';
+console.log(firstNonRepeatedCharacter2(someString2));

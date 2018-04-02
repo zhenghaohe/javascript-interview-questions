@@ -7,11 +7,11 @@
 
 //use reduce helper
 function balancedParens(string) {
-  return !string.split('').reduce((previous,char)=> {
-    if (previous<0) return previous; // ')('
-    if (char === '(') return ++previous;
-    if (char === ')') return --previous;
-    return previous;
+  return !string.split('').reduce((count,char)=> {
+    if (char === '(') return ++count;
+    if (char === ')') return --count;
+    if (count<0) return NaN; // ')('
+    return count;
   },0);
 }
 
@@ -36,5 +36,5 @@ function balancedParens3(string) {
 }
 
 
-console.log(balancedParens2(')()'));
+console.log(balancedParens('())()'));
 console.log(balancedParens3('()()'));
