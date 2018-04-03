@@ -155,9 +155,8 @@ class BST {
         node.right && queue.push(node.right);
         result.push(node.data);
       }
-      return result;
     }
-    return null;
+    return result;
   }
 
   traverseDF() {
@@ -170,9 +169,8 @@ class BST {
         node.left && stack.unshift(node.left);
         result.push(node.data);
       }
-      return result;
     }
-    return null;
+    return result;
   }
 }
 
