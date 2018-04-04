@@ -26,11 +26,11 @@ class LinkedList {
   }
   getLast() {
     let node = this.head;
-    if (!node) return null;
-    while(node.next) {
+    while(node) {
+      if (!node.next) return node;
       node = node.next;
     }
-    return node;
+    return null;
   }
   clear() {
     this.head = null;
@@ -85,10 +85,7 @@ class LinkedList {
       node = node.next;
       counter++;
     }
-    if (prevNode && prevNode.next) {
-      prevNode.next = node.next;
-      return;
-    }
+    if (node) prevNode.next = node.next;
     return; // edge case 2&3: empty list or index>size
   }
   removeVal(val) {
@@ -102,17 +99,14 @@ class LinkedList {
       prevNode = node;
       node = node.next;
     }
-    if (prevNode && prevNode.next) {
-      prevNode.next = node.next;
-      return;
-    }
+    if (node) prevNode.next = node.next;
     return; //edge case 2&3: empty list or val is not in the list
   }
   insertAt(data,index) {
     let node = this.head;
     let counter = 0;
     let prevNode;
-    if (index === 0 || !node) { //edge case 1&2: empty list or insert at index 0
+    if (index === 0) { //edge case 1&2: empty list or insert at index 0
       this.head = new Node(data,node);
       return;
     }
@@ -160,12 +154,21 @@ list.insertFirst(2);
 list.insertFirst(1);
 list.insertLast(5);
 
-console.log(list.sum());
-console.log(list.size());
-list.reverse();
-console.log(list.size());
-let sum = 0;
 for (let node of list) {
-  sum += node.data;
+console.log(node.data);
 }
-console.log(sum);
+
+// console.log(list.getLast());
+// console.log(list.sum());
+// console.log(list.size());
+// list.reverse();
+// console.log(list.size());
+// let sum = 0;
+for (let node of list) {
+console.log(node.data);
+}
+
+list.insertAt(0,0);
+for (let node of list) {
+console.log(node.data);
+}
