@@ -11,7 +11,7 @@ const removeDuplicates = function(arr) {
       arr[++i] = arr[j];
     }
   }
-  return ++i;
+  return i+1;
 }
 
 //using filter helper but not in place
