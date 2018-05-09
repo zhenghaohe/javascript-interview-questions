@@ -13,9 +13,32 @@ function fibonacci1(n) {
   return n < 2 ? n : fibonacci1(n - 1) + fibonacci1(n - 2);
 }
 
+//a iterative solution
+//runtime: linear
+function fibonacci2(n) {
+  let fib = [0,1];
+
+  for (let i = 2; i < n; i++) {
+    fib[i] = fib[i-2] + fib[i-1];
+  }
+  return fib;
+}
+
+//a iterative solution with closure and IIFE
+//runtime: linear
+var Fibonaccis3 = (function () {
+  var fib = [0, 1];
+  return function (n) {
+    if (typeof fib[n] !== 'number') {
+      fib[n] = fib[n - 1] + fib[n - 2];
+    }
+    return fib[n];
+  };
+}());
+
 //a recursive approach with memoization
 //runtime: linear
-function fibonacci2(n,memo={}) {
+function fibonacci4 (n,memo={}) {
   if (memo[n]) return memo[n];
   if (n<2) return n;
   return memo[n]=fibonacci2(n-1,memo)+fibonacci2(n-2,memo);
@@ -23,7 +46,7 @@ function fibonacci2(n,memo={}) {
 
 //a bottom-up iterative approach
 //runtime: linear
-function fibonacci3(n){
+function fibonacci5 (n){
   const arr = [0,1];
   if (n<2) return arr.slice(0,n+1);
   for (let i = 2; i <= n; i++) {
