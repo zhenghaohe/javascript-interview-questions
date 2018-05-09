@@ -9,9 +9,8 @@
 
 //a naive recursive approach
 //runtime: exponential
-function fibonacci(n) {
-  if (n < 2) return n;
-  return fibonacci(n - 1) + fibonacci(n - 2);
+function fibonacci1(n) {
+  return n < 2 ? n : fibonacci1(n - 1) + fibonacci1(n - 2);
 }
 
 //a recursive approach with memoization
