@@ -7,12 +7,12 @@
 
 //use reduce helper
 function balancedParens(string) {
-  return !string.split('').reduce((count,char)=> {
+  return string.split('').reduce((count,char)=> {
+    if (count<0) return NaN; // ')('
     if (char === '(') return ++count;
     if (char === ')') return --count;
-    if (count<0) return NaN; // ')('
     return count;
-  },0);
+  },0)===0;
 }
 
 //use forEach helper
