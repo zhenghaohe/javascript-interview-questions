@@ -13,7 +13,7 @@ function fibonacci1(n) {
   return n < 2 ? n : fibonacci1(n - 1) + fibonacci1(n - 2);
 }
 
-//a iterative solution
+//a bottom-up iterative approach
 //runtime: linear
 function fibonacci2(n) {
   let fib = [0,1];
@@ -21,13 +21,15 @@ function fibonacci2(n) {
   for (let i = 2; i < n; i++) {
     fib[i] = fib[i-2] + fib[i-1];
   }
+
   return fib;
 }
 
 //a iterative solution with closure and IIFE
 //runtime: linear
 var Fibonaccis3 = (function () {
-  var fib = [0, 1];
+  let fib = [0, 1];
+
   return function (n) {
     if (typeof fib[n] !== 'number') {
       fib[n] = fib[n - 1] + fib[n - 2];
@@ -44,18 +46,6 @@ function fibonacci4 (n,memo={}) {
   return memo[n]=fibonacci2(n-1,memo)+fibonacci2(n-2,memo);
 }
 
-//a bottom-up iterative approach
-//runtime: linear
-function fibonacci5 (n){
-  const arr = [0,1];
-  if (n<2) return arr.slice(0,n+1);
-  for (let i = 2; i <= n; i++) {
-    const a = arr[i-1]
-    const b = arr[i-2]
-    arr.push(a+b);
-  }
-  return arr[n]
-}
 
 //another recursive approach with memoization but better
 //runtime: linear for the first time running the fib algorithm with the memoized function
