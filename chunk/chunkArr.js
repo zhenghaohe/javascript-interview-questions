@@ -30,3 +30,8 @@ function chunk2(arr,size) {
   }
   return chunked;
 }
+
+const chunk3 = (arr, size) =>
+  Array.from({ length: Math.ceil(arr.length / size) }, (v, i) =>
+    arr.slice(i * size, i * size + size)
+  );
