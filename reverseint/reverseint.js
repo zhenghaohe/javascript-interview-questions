@@ -23,4 +23,4 @@ function reverseInt2(n) {
 }
 
 
-console.log( reverseInt(-90));
+console.log( reverseInt2(-90));

@@ -10,6 +10,7 @@ function maxChar(str) {
   const chars = {};
   let max = 0;
   let maxChar = '';
+
   for (let char of str) {
     chars[char]?chars[char]++:chars[char]=1;
     if (chars[char]>max) {
@@ -17,6 +18,7 @@ function maxChar(str) {
       maxChar = char;
     }
   }
+
   return maxChar;
 }
 
@@ -24,11 +26,13 @@ function maxChar(str) {
 function maxChar2(str) {
  let maxCount = 0;
  let maxChar = '';
+
  for (let char of str) {
   const count = str.split('').filter(item => item === char).length;
   if (count > maxCount) {
     maxChar = char;
     maxCount = count;
  }}
+ 
  return maxChar;
 }
