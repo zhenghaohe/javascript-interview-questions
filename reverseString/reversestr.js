@@ -13,7 +13,7 @@ function reverse(str) {
 
 //use "reduce" helper
 function reverse2(str) {
-  return str.split('').reduce((newStr,char)=>char+newStr,'');
+  return str.split('').reduce((newStr,char)=>char+newStr,'').join('');
 }
 
 //iterative solution
