@@ -1,21 +1,12 @@
 //‘Coding JavaScript -> 'gnidoC tpircSavaJ'
-function reverseWords(string) {
-  var wordsArr = string.split(' ');
-  var reversedWordsArr = [];
-  wordsArr.forEach(word=>{
-    reversedWordsArr.push(word.split('').reduce((newWord,char)=>char+newWord,''));
-  })
-  return reversedWordsArr.join(' ');
-}
+const reverseWords = str => {
+  let newStr = [];
+  str.split(' ').forEach(word=>newStr.push(word.split('').reverse().join('')));
+  return newStr.join(' ')}
+
 
 //‘Coding JavaScript -> 'JavaScript Coding'
-function reverseWords2(string) {
-  return string.split(' ').reduce((newStr,word)=>{
-    newStr.unshift(word);
-    return newStr;
-  },[]).join(' ');
-}
-
+const reverseWords2 = str => str.split(' ').reduce((newStr,word)=>word+' '+newStr,'');
 
 console.log(reverseWords('Coding JavaScript'));
 console.log(reverseWords2('Coding JavaScript'));
