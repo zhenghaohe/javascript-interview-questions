@@ -20,10 +20,7 @@ const closest2 = (arr, target) => {
       l = mid;
     }
   }
-  if (target - arr[l] <= arr[r] - target) {
-    return arr[l];
-  }
-  return arr[r];
+  return target - arr[l] <= arr[r] - target ?  arr[l] : arr[r];
 }
 
 console.log(closest2([2, 4, 5, 9, 21],13));
