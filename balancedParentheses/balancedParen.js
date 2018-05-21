@@ -6,17 +6,16 @@
 // (()((())()))
 
 //use reduce helper
-function balancedParens(string) {
+const balancedParens = string => {
   return string.split('').reduce((count,char)=> {
     if (count<0) return NaN; // ')('
-    if (char === '(') return ++count;
-    if (char === ')') return --count;
+    return count += char === '(' ? 1 : -1;
     return count;
   },0)===0;
 }
 
 //use forEach helper
-function balancedParens2(string) {
+const balancedParens2 = string => {
    let counter = 0;
    string.split('').forEach(char => {
      counter += char === "(" ? 1: -1;
@@ -27,11 +26,11 @@ function balancedParens2(string) {
 
 
  //use every helper and stack
-function balancedParens3(string) {
+const balancedParens3 = string => {
   let stack = [];
   return [...string].every(char => char === '(' ?
                         stack.push('(') : //push() return the new length of the array.
-                        stack.pop()) //pop() on an empty array, it returns undefined.
+                        stack.pop(')') //pop() on an empty array, it returns undefined.
   && !stack.length;
 }
 
