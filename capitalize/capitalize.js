@@ -20,7 +20,7 @@ function capitalize2(str) {
   let words = str[0].toUpperCase();
 
   for (let i = 1; i < str.length; i++) {
-    words += str[i-1] === ' ' ? str[i].toUpperCase():str[i];
+    words += str[i-1] === ' ' ? str[i].toUpperCase() : str[i];
   }
 
   return words;
