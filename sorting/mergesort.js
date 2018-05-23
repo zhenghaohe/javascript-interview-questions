@@ -1,7 +1,7 @@
 // Implement mergeSort
 
 // recursively subdivide this input array
-function mergeSort(arr) {
+const mergeSort = arr => {
   if (arr.length === 1) {
     return arr;
   }
@@ -13,7 +13,7 @@ function mergeSort(arr) {
 }
 
 //take two sorted arrays and join them into one sorted array
-function merge(left, right) {
+const merge = (left, right) => {
   const results = [];
   while(left.length && right.length) {
     if (left[0] < right[0]) {
