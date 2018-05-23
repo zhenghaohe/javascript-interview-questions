@@ -8,7 +8,7 @@ class Stack {
   pop() {
     return this.data.pop();
   }
-  peak(){
+  peak() {
     return this.data[this.data.length-1];
   }
 }

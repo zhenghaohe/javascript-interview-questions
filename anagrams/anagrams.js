@@ -9,7 +9,7 @@
 //   anagrams('Hi there', 'Bye there') --> False
 
 //solution 1 - use a hash table
-function anagrams(stringA,stringB) {
+const anagrams = (stringA,stringB) => {
   const aCharMap = buildCharMap(stringA);
   const bCharMap = buildCharMap(stringB);
 
@@ -23,7 +23,7 @@ function anagrams(stringA,stringB) {
   }
 
 
-function buildCharMap(str) {
+const buildCharMap = str => {
   const charMap = {};
 
   for (let char of str.replace(/[^\w]/g,"").toLowerCase()) { // or str.replace(/\W/g,'').toLowerCase()
@@ -34,10 +34,10 @@ function buildCharMap(str) {
 }
 
 //solution 2 - sort the strings
-function anagrams2(stringA,stringB) {
+const anagrams2 = (stringA,stringB) => {
   return cleanString(stringA) === cleanString(stringB);
 }
 
-function cleanString(str) {
+const cleanString = str => {
   return str.replace(/[^\w]/g,'').toLowerCase().split('').sort().join('');
 }
