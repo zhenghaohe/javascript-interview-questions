@@ -18,7 +18,7 @@
 //       '####'
 
 //iterative solution
-function steps(n) {
+const steps = n => {
   for (let row = 1; row <= n; row++) {
     let stair = '#'.repeat(row);
     for (let col = row+1; col <= n; col++) {
@@ -30,18 +30,18 @@ function steps(n) {
 
 steps(4);
 //recursive solution
-function helper(n,row) {
+const helper = (n, row) => {
   return '*'.repeat(row)+' '.repeat(n-row);
 }
 
-function steps2(n,row=1) {
+const steps2 = (n, row=1) => {
   if (row>n) return;
   console.log(helper(n,row));
   return steps2(n,row+1)
 }
 
 //iterative solution2
-function steps3(n) {
+const steps3 = n => {
   const rows='#'.repeat(n).split('');
   rows.map((row,index)=> console.log(row+'#'.repeat(index)+' '.repeat(n-index-1)));
 }
