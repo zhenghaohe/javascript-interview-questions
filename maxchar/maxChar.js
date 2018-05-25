@@ -6,7 +6,7 @@
 // maxChar("apple 1231111") === "1"
 
 //using a map object
-function maxChar(str) {
+const maxChar = str => {
   const chars = {};
   let max = 0;
   let maxChar = '';
@@ -23,7 +23,7 @@ function maxChar(str) {
 }
 
 //using filter helper
-function maxChar2(str) {
+const maxChar2 = str => {
  let maxCount = 0;
  let maxChar = '';
 
@@ -33,6 +33,6 @@ function maxChar2(str) {
     maxChar = char;
     maxCount = count;
  }}
- 
+
  return maxChar;
 }

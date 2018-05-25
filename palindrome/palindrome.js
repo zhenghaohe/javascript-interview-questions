@@ -8,13 +8,13 @@
 //   palindrome("abcdefg") === false
 
 //the easiest way
-function palindrome(str) {
+const palindrome = str => {
   str = str.replace(/\W/g,'').toLowerCase();
   return str===str.split('').reverse().join('');
 }
 
 //iterative solutuon
-function palindrome2(str) {
+const palindrome2 = str => {
   str = str.replace(/\W/g,'').toLowerCase();
   for (let i = 0; i < str.length/2; i++) {
     if (str[i] !== str[str.length-i-1]) return false;
@@ -23,7 +23,7 @@ function palindrome2(str) {
 };
 
 //iterative solutuon with 'every' helper
-function palindrome3(str) {
+const palindrome3 = str => {
   str = str.replace(/\W/g,'').toLowerCase();
   return str.split('').every((char,i)=>char === str[str.length-i-1]);
 }
