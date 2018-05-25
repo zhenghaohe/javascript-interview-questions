@@ -7,17 +7,15 @@
 //   reverse('Greetings!') === '!sgniteerG'
 
 //the easiest way
-function reverse(str) {
-  return str.split('').reverse().join('');
-}
+const reverse = str => str.split('').reverse().join('');
+
 
 //use "reduce" helper
-function reverse2(str) {
-  return str.split('').reduce((newStr,char)=>char+newStr,'').join('');
-}
+const reverse2 = str => str.split('').reduce((newStr,char)=>char+newStr,'').join('');
+
 
 //iterative solution
-function reverse3(str) {
+const reverse3 = str => {
   let newStr = '';
   for (let char of str) {
     newStr = char + newStr;
@@ -26,7 +24,7 @@ function reverse3(str) {
 }
 
 //the recursive way
-function reverse4(str) {
+const reverse4 = str => {
   if (str === '') return '';
   return reverse4(str.substr(1))+str[0] // or str.slice(1)
 }

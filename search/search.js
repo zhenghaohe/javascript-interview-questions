@@ -1,5 +1,5 @@
 //iterative approach
-function binarySearch(arr,k) {
+const binarySearch = (arr,k) => {
   let l = 0, r = arr.length-1;
   while(l <= r) {
     let m = l + parseInt((r-l)/2);
@@ -11,8 +11,7 @@ function binarySearch(arr,k) {
 }
 
 //recursive approach
-function binarySearch2(arr,k,l = 0,r = arr.length)
-{
+const binarySearch2 = (arr, k, l = 0, r = arr.length) => {
   if(l > r) return -1;
   let m = l + parseInt((r-l)/2);
   if (k === arr[m]) return m;

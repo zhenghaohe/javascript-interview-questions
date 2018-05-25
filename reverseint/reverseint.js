@@ -7,12 +7,12 @@
 //   reverseInt(500) === 5
 //   reverseInt(-15) === -51
 //   reverseInt(-90) === -9
-function reverseInt(n) {
+const reverseInt = n => {
   const reversed = n.toString().split('').reverse().join('');
   return parseInt(reversed)*Math.sign(n);
 }
 
-function reverseInt2(n) {
+const reverseInt2 = n => {
   let result = 0;
   while(n) {
     result = result*10 + n%10;
