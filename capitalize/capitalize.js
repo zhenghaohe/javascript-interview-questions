@@ -6,7 +6,7 @@
 //   capitalize('a lazy fox') --> 'A Lazy Fox'
 //   capitalize('look, it is working!') --> 'Look, It Is Working!'
 
-function capitalize(str) {
+const capitalize = str => {
   const words = [];
 
   for (let word of str.split(' ')) {
@@ -16,7 +16,7 @@ function capitalize(str) {
   return words.join(' ');
 }
 
-function capitalize2(str) {
+const capitalize2 = str => {
   let words = str[0].toUpperCase();
 
   for (let i = 1; i < str.length; i++) {
@@ -27,11 +27,11 @@ function capitalize2(str) {
 }
 
 
-function capitalize3(str) {
+const capitalize3 = str => {
   return str.split(' ').map(word => word[0].toUpperCase()+ word.slice(1)).join(' ');
 }
 
-function capitalize4(str) {
+const capitalize4 = str => {
   return str.split(' ').reduce( (newStr,word) => {
     newStr.push(word[0].toUpperCase()+ word.slice(1));
     return newStr;

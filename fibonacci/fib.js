@@ -9,13 +9,12 @@
 
 //a naive recursive approach
 //runtime: exponential
-function fibonacci1(n) {
-  return n < 2 ? n : fibonacci1(n - 1) + fibonacci1(n - 2);
-}
+const fibonacci1 = n => n < 2 ? n : fibonacci1(n - 1) + fibonacci1(n - 2);
+
 
 //a bottom-up iterative approach
 //runtime: linear
-function fibonacci2(n) {
+const fibonacci2 = n => {
   const fib = [0,1];
 
   for (let i = 2; i < n; i++) {
@@ -40,7 +39,7 @@ var Fibonaccis3 = (function () {
 
 //a recursive approach with memoization
 //runtime: linear
-function fibonacci4 (n,memo={}) {
+const fibonacci4 = (n, memo={}) => {
   if (memo[n]) return memo[n];
   if (n<2) return n;
   return memo[n]=fibonacci2(n-1,memo)+fibonacci2(n-2,memo);
@@ -50,7 +49,7 @@ function fibonacci4 (n,memo={}) {
 //another recursive approach with memoization but better
 //runtime: linear for the first time running the fib algorithm with the memoized function
 //Any subsequent calculation where 'n' is less than the earlier call's value of 'n' would be constant runtime.
-function memoize(fn) {
+const memoize = fn => {
   const cache = {};
   return function(...args) {
     if (cache[args]) {
@@ -64,7 +63,7 @@ function memoize(fn) {
   };
 }
 
-function slowFib(n) {
+const slowFib = n => {
   if (n < 2) {
     return n;
   }
