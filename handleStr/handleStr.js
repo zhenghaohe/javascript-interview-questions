@@ -1,7 +1,7 @@
 //给定一个长度小于 50 且包含字母和数字的任意字符串，要求按顺序取出当中的数字和英文字母，数字需要去重，重新排列后的字符串数字在前，字母在后。
 
 //solution 1
-function handleStr (str) {
+const handleStr = str => {
   let arr = str.split('');
   let words = '';
   let nums = '';
@@ -14,12 +14,10 @@ function handleStr (str) {
 }
 
 //remove duplicats
-function uniqueStr(arr) {
-  return arr.split('').filter((element,index) => index === arr.indexOf(element)).join('');
-}
+const uniqueStr = arr => arr.split('').filter((element,index) => index === arr.indexOf(element)).join('');
 
 //solution 2(use str.match(regexp))
-function handleStr2 (str) {
+const handleStr2 = str => {
   let words = str.match(/[a-z]/gi).join('');// str.match() will return an Array containing the entire matched string
   let nums = str.match(/\d/g).join('');
 
