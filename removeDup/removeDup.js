@@ -1,12 +1,12 @@
 //remove duplicates in string
 
 //use filter helper
-function removeDup(string) {
+const removeDup = string => {
   return string.toLowerCase().split(' ').filter((val,index,self) => self.indexOf(val) === index).join(' '); //filter returns a new array with the elements that pass the test.
 }
 
 //use reduce and indexOf helper
-function removeDup2(string) {
+const removeDup2 = string => {
   return string.toLowerCase().split(' ').reduce((previous,word)=>{
     // if (!previous.find(prev => prev===word)) previous.push(word);
     if (previous.indexOf(word)===-1) previous.push(word); //indexof returns -1 if it is not present.
@@ -14,7 +14,7 @@ function removeDup2(string) {
   },[]).join(' ');
 }
 
-function removeDup3(string) {
+const removeDup3 = string => {
   return string.toLowerCase().split(' ').reduce((previous,word)=>{
     if (previous.indexOf(word)===-1) previous.push(word);
     return previous;
@@ -22,7 +22,7 @@ function removeDup3(string) {
 }
 
 //use a map object
-function removeDup4(string) {
+const removeDup4 = string => {
   const chars = {};
   return string.toLowerCase().split(' ').reduce( (newStr,char) => {
     if (!chars[char]) {
