@@ -13,7 +13,7 @@
 //   buzz
 
 //Using %
-function fizzBuzz(n) {
+const fizzBuzz = n => {
   for (let i = 1; i <= n; i++) {
     // Is the number a multiple of 3 and 5?
     if (i % 3 === 0 && i % 5 === 0) {
@@ -30,7 +30,7 @@ function fizzBuzz(n) {
 }
 
 //not using %
-function fizzBuzz2(n) {
+const fizzBuzz2 = n => {
   let Fizz = 3;
   let Buzz = 5;
   for (let i = 1; i <= n; i++) {
