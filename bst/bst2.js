@@ -26,6 +26,11 @@ class BST {
         })(node);
     }}
 
+  sum(node = this.root) {
+    if (!node) return 0;
+    return node.data + this.sum(node.right) + this.sum(node.left);
+  }
+
   findMin() {
     let node = this.root;
     while(node) {
@@ -215,3 +220,4 @@ console.log('preOrder: ' + bst.preOrder());
 console.log('postOrder: ' + bst.postOrder());
 console.log('traverseBF: ' + bst.traverseBF());
 console.log('traverseDF: ' + bst.traverseDF());
+console.log(bst.sum());
