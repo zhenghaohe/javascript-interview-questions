@@ -7,7 +7,6 @@ class Set {
   add(obj){ // O(1)
     if (!this.has(obj)) {
       const str = this.hash(obj);
-      console.log('here');
       this._set[str] = obj;
     }
     return this;
@@ -40,8 +39,6 @@ class Set {
 const set = new Set();
 set.add({name:"wangming",id:9874});
 console.log(set);
-// set.delete({name:"wangming",id:9874});
-// console.log(set);
 set.add({name:"wangming",id:9874});
 console.log(set);
 set.add({name:"zhenghao",id:1234}).add({name:"Ambar",id:2345});
@@ -53,3 +50,8 @@ console.log(set.has({name:"zhenghao",id:1234}));
 console.log(set.has({name:"Ambar",id:2345}));
 set.clear();
 console.log(set);
+set.add('Bob')
+   .add('John');
+console.log(set.has('Bob'));
+console.log(set.has('bob'));
+console.log(set.has('John'));
