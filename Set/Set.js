@@ -20,6 +20,9 @@ class Set {
     let str = this.hashFunc(obj);
     if (this.checkDup(str)) {
       delete this._set[str];
+      return true;
+    } else {
+      return false;
     }
   }
 
@@ -29,6 +32,10 @@ class Set {
 
   checkDup(str) { // O(1)
     return this._set[str];
+  }
+
+  clear() {
+    this._set = {};
   }
 }
 
@@ -45,3 +52,5 @@ set.delete({name:"zhenghao",id:1234});
 console.log(set);
 console.log(set.has({name:"zhenghao",id:1234}));
 console.log(set.has({name:"Ambar",id:2345}));
+set.clear();
+console.log(set);
