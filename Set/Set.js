@@ -34,6 +34,10 @@ class Set {
     this._set = {};
   }
 
+  size() {
+    return Object.keys(this._set).length;
+  }
+
   *[Symbol.iterator]() {
     for (let key in this._set) {
       yield this._set[key];
@@ -65,3 +69,4 @@ for (let val of set) {
   console.log(val);
 }
 console.log(...set);
+console.log(set.size());
