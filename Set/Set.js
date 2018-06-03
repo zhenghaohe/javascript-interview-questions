@@ -33,6 +33,13 @@ class Set {
   clear() {
     this._set = {};
   }
+
+  *[Symbol.iterator]() {
+    for (let key in this._set) {
+      yield this._set[key];
+    }
+  }
+
 }
 
 
@@ -48,10 +55,13 @@ set.delete({name:"zhenghao",id:1234});
 console.log(set);
 console.log(set.has({name:"zhenghao",id:1234}));
 console.log(set.has({name:"Ambar",id:2345}));
-set.clear();
-console.log(set);
+// set.clear();
+// console.log(set);
 set.add('Bob')
-   .add('John');
-console.log(set.has('Bob'));
-console.log(set.has('bob'));
-console.log(set.has('John'));
+   .add('John')
+   .add({name:"k9999",id:9999})
+// console.log(set);
+for (let val of set) {
+  console.log(val);
+}
+console.log(...set);
