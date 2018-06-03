@@ -5,20 +5,21 @@ class Set {
   }
 
   add(obj){ // O(1)
-    let str = this.hashFunc(obj);
-    if (!this.checkDup(str)) {
+    if (!this.has(obj)) {
+      let str = this.hash(obj);
+      console.log('here');
       this._set[str] = obj;
     }
     return this;
   }
 
-  hashFunc(obj) {
-    return `${obj.name}&${obj.id}`;
+  hash(obj) {
+    return JSON.stringify(obj);
   }
 
   delete(obj) { // O(1)
-    let str = this.hashFunc(obj);
-    if (this.checkDup(str)) {
+    if (this.has(obj)) {
+      let str = this.hash(obj);
       delete this._set[str];
       return true;
     } else {
@@ -27,11 +28,7 @@ class Set {
   }
 
   has(obj) { // O(1)
-    return !!this._set[this.hashFunc(obj)];
-  }
-
-  checkDup(str) { // O(1)
-    return this._set[str];
+    return !!this._set[this.hash(obj)];
   }
 
   clear() {
@@ -43,7 +40,9 @@ class Set {
 const set = new Set();
 set.add({name:"wangming",id:9874});
 console.log(set);
-set.delete({name:"wangming",id:9874});
+// set.delete({name:"wangming",id:9874});
+// console.log(set);
+set.add({name:"wangming",id:9874});
 console.log(set);
 set.add({name:"zhenghao",id:1234}).add({name:"Ambar",id:2345});
 console.log(set);
