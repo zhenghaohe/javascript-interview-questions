@@ -6,7 +6,7 @@ class Set {
 
   add(obj){ // O(1)
     if (!this.has(obj)) {
-      let str = this.hash(obj);
+      const str = this.hash(obj);
       console.log('here');
       this._set[str] = obj;
     }
@@ -19,7 +19,7 @@ class Set {
 
   delete(obj) { // O(1)
     if (this.has(obj)) {
-      let str = this.hash(obj);
+      const str = this.hash(obj);
       delete this._set[str];
       return true;
     } else {
