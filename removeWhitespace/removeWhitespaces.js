@@ -47,7 +47,7 @@ const removeWhiteSpaces3 = str => {
       count = 1;
     }
     else {
-      if (count > 0) {
+      if (count === 1) {
         newStr += " ";
         count = 0;
       }
@@ -63,4 +63,4 @@ const removeWhiteSpaces3 = str => {
 const str = "    And   nothing hurts anymore, \t  I feel    kinda free.  \t We're    still    the   kids  \t we used to be,   yeah,   yeah";
 const str2 = "And nothing hurts anymore, I feel kinda free. We're still the kids we used to be, yeah, yeah";
 const str3= "a  \t\tb"
-console.log(removeWhiteSpaces3(str));
+console.log(removeWhiteSpaces3(str3));
