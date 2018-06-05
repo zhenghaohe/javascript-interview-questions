@@ -20,8 +20,25 @@ const removeWhiteSpaces = str => {
   return newStr;
 }
 
+const removeWhiteSpaces2 = str => {
+  let newStr = '';
+
+  for (var i = 0; i < str.length; i++) {
+    while (str[i] === ' ' || str[i] === '/t') {
+      i++;
+    }
+    newStr += ' ';
+    while (str[i] !== ' ' && str[i] !== '/t' && str[i] !== undefined) {
+      newStr += str[i];
+      i++;
+    }
+  }
+
+  return newStr.trim();
+}
+
 
 
 const str = "    And   nothing hurts anymore,   I feel    kinda free.   We're    still    the   kids   we used to be,   yeah,   yeah";
 const str2 = "And nothing hurts anymore, I feel kinda free. We're still the kids we used to be, yeah, yeah";
-console.log(removeWhiteSpaces(str)===str2);
+console.log(removeWhiteSpaces2(str));
