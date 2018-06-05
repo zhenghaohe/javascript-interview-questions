@@ -42,15 +42,16 @@ const removeWhiteSpaces3 = str => {
   let count = 0;
 
   str = str.trim();
-
   for (let i = 0; i < str.length; i++) {
     if (str[i] === ' ' || str[i]=== "\t") {
       count = 1;
     }
     else {
-      if (count > 0) newStr += " ";
+      if (count > 0) {
+        newStr += " ";
+        count = 0;
+      }
       newStr += str[i];
-      count = 0;
     }
   }
 
