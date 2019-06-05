@@ -10,8 +10,7 @@ const balancedParens = string => {
   return string.split('').reduce((count,char)=> {
     if (count<0) return NaN; // ')('
     return count += char === '(' ? 1 : -1;
-    return count;
-  },0)===0;
+  }, 0) === 0;
 }
 
 //use forEach helper
@@ -30,10 +29,10 @@ const balancedParens3 = string => {
   let stack = [];
   return [...string].every(char => char === '(' ?
                         stack.push('(') : //push() return the new length of the array.
-                        stack.pop(')') //pop() on an empty array, it returns undefined.
+                        stack.pop(')')) //pop() on an empty array, it returns undefined.
   && !stack.length;
 }
 
 
-console.log(balancedParens('())()'));
+console.log(balancedParens('()'));
 console.log(balancedParens3('()()'));
