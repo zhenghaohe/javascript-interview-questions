@@ -15,14 +15,13 @@ function reverseList(head) {
 
 
 // recursive approach
-
 function reverseList(head) {
   // time - O(n) space  - O(n)
   function r(node, prev = null) {
-    let newHead = node;
-    if (node.next) newHead = r(node.next, node);
+    if (!next) return node;
+    const next = node.next;
     node.next = prev;
-    return newHead;
+    return r(next, node);
   }
 
   return head ? r(head) : head;
