@@ -50,14 +50,14 @@ const fibonacci4 = (n, memo={}) => {
 //runtime: linear for the first time running the fib algorithm with the memoized function
 //Any subsequent calculation where 'n' is less than the earlier call's value of 'n' would be constant runtime.
 const memoize = fn => {
-  const cache = {};
+  const cache = new Map();
   return function(...args) {
-    if (cache[args]) {
-      return cache[args];
+    if (cache.has(args)) {
+      return cache.get(args);
     }
 
     const result = fn.apply(this, args);
-    cache[args] = result;
+    cache.set([args], result);
 
     return result;
   };
