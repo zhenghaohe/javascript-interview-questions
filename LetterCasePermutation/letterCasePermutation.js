@@ -13,7 +13,7 @@ var letterCasePermutation = function(S) {
   const result = [];
 
   r('', S);
-  
+
   return [...new Set(result)];
 
   function r(curr, rest) {
