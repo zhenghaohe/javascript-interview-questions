@@ -2,6 +2,7 @@
 // In-place: space complexity - O(logn) for maintaining the call stack
 // Worse case happens when we always choose the rightmost element with an sorted array
 
+// recursive form
 const quickSort = (arr,left = 0,right = arr.length-1) => {
   if (left >= right) return; //base case
   const index = partition(arr, left, right);
@@ -9,18 +10,31 @@ const quickSort = (arr,left = 0,right = arr.length-1) => {
   quickSort(arr, index+1, right);
 };
 
-const partition = (arr,left,right) => {
- const pivot = arr[right];
- let index = left;
- for (let i = left; i < right ; i++) {
-   if (arr[i] < pivot) {
-     [arr[i], arr[index]] = [arr[index], arr[i]];
-     index++;
-   }
- }
- [arr[index], arr[right]] = [arr[right], arr[index]];
- return index;
+// iterative form
+const quickSort = (arr, left = 0, right = arr.length - 1) {
+  const stack = [[left, right]];
+  while(stack.length) {
+    const [left, right] = stack.pop();
+    if (left >= right) continue;
+    const pivotIndex = partition(arr,left,right);
+    stack.push([left, pivotIndex -1]);
+    stack.push([pivotIndex+1, right]);
+  }
 }
+
+function partition(arr,left,right) {
+  const pivot = arr[right];
+  let index = left;
+  for (let i = left; i < right ; i++) {
+    if (arr[i] < pivot) {
+      [arr[i], arr[index]] = [arr[index], arr[i]];
+      index++;
+    }
+  }
+  [arr[index], arr[right]] = [arr[right], arr[index]];
+  return index;
+}
+
 
 const arr1 = [3,4,5,7,3,1,3,4,6,8,3,1,1,4,7,9,3];
 quickSort(arr1);
