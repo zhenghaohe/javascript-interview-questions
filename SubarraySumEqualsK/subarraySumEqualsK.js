@@ -37,3 +37,6 @@ var subarraySum = function(nums, k) {
 
   return count;
 }
+
+
+console.log('1' - '1');

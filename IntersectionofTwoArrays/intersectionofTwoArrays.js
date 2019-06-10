@@ -31,7 +31,7 @@ function intersection(l1, l2) {
       result.push(currentL1);
       while(currentL1 === l1[l1Index]) l1Index++;
       while(currentL2 === l2[l2Index]) l2Index++;
-    } else if (l1[l1Index] > l2[l2Index]) {
+    } else if (currentL1 > currentL2) {
       while(currentL2 === l2[l2Index]) l2Index++;
     } else {
       while(currentL1 === l1[l1Index]) l1Index++;
