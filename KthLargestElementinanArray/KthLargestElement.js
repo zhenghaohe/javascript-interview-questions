@@ -1,7 +1,7 @@
 function findKthLargest(nums, k) {
   let start = 0;
   let end = nums.length - 1;
-  while(1) {
+  while(start <= end) {
     let index  = partition(nums, start, end);
     if (index === k - 1) {
       return nums[index];

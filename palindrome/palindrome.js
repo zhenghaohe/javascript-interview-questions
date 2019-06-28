@@ -24,6 +24,6 @@ const palindrome2 = str => {
 
 //iterative solutuon with 'every' helper
 const palindrome3 = str => {
-  str = str.replace(/\W/g,'').toLowerCase();
-  return str.split('').every((char,i)=>char === str[str.length-i-1]);
+  return str.replace(/\W/g, '').toLowerCase()
+    .split('').every((char, i, self) => char === self[self.length-i-1]);
 }
