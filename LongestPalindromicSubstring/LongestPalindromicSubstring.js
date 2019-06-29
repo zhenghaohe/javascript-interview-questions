@@ -28,24 +28,26 @@ function isPalindrome(str, left, right) {
 
 
 // solution2: time complexity: O(n^2)
-var longestPalindrome = function(s) {
-  let max = '';
-  for (let i = 0; i < s.length; i++) {
-    for (const j of [0, 1]) {
-      let left = i;
-      let right = i + j;
-      while (left >= 0 && s[left] === s[right]) {
-        left--;
-        right++;
-      }
-
-      if ((right - left - 1) > max.length) {
-        max = s.substring(left + 1, right);
-      }
-    }
-
-    // No better move exists
-    if (Math.ceil(max.length / 2) >= s.length - i) break;
+function longestPalindrome(str) {
+  let result = [0, 1];
+  let maxLength = 1;
+  for (let i = 1; i < str.length; i++) {
+    const even = getLongestPalindromeFrom(str, i - 1, i);
+    const odd = getLongestPalindromeFrom(str, i - 1, i + 1);
+    maxLength = even[1] - even[0] > odd[1] - odd[0] ? even : odd;
+    result = maxLength[1] - maxLength[0] > result[1] - result[0] ? maxLength : result;
   }
-  return max;
-};
+
+  return str.slice(result[0], result[1]);
+}
+
+function getLongestPalindromeFrom(str, start, end) {
+  while(start >= 0 && end < str.length) {
+    if (str[start] !== str[end]) {
+      break;
+    }
+    start--;
+    end++;
+  }
+  return [start + 1, end];
+}
